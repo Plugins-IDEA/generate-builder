@@ -1,0 +1,38 @@
+<idea-plugin>
+  <id>io.github.nzlong.generator.generate-builder</id>
+  <name>generate-builder</name>
+  <version>1.0</version>
+  <vendor email="stevenjoelong@gmail.com" url="https://github.com/nzlong/generate-builder">nzlong</vendor>
+
+  <description><![CDATA[
+      <p>generate getter、setter、toString、Structure、builder；
+        You can use: User user = User.builder().setId(1).set("steven").setAge(12).setPhone("110").build();
+        Or User user = User.builder(user).setId(user.getUserId() == null ? 1 : user.getUserId()).set("steven").setAge(12).setPhone("110").build();</p>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <em>No changes</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action class="io.github.nzlong.generator.GenerateAction" id="Nzlong.GeneratorAction" text="generateMGS">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
